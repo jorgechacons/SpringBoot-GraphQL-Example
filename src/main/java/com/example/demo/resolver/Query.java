@@ -17,7 +17,7 @@ public class Query implements GraphQLQueryResolver {
     CustomerRepository customerRepository;
 
     //Method to get all the customers from the customerRepository
-    //must has to match with the graphQL Schema
+    //must have to match with the graphQL Schema
     public Iterable<Customer> findAllCustomers(){
         return customerRepository.findAll();
     }
