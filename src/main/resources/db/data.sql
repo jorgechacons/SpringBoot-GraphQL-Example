@@ -1,0 +1,2 @@
+INSERT INTO CUSTOMER VALUES(1,'Jorge','Chacon');
+INSERT INTO CUSTOMER VALUES(2,'System','System');
