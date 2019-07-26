@@ -1,9 +1,11 @@
 type Customer {
-    id: ID,
+    id: ID!,
     name: String,
     lastName: String
 }
 
 type Query {
-    customers: [Customer]
+    findAllCustomers: [Customer]!
+    findCustomer (id : Long) : Customer
 }
+
