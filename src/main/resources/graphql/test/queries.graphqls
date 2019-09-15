@@ -16,6 +16,7 @@
 
 {
     findCustomerByIds(ids: "1,5"){
-        name
+        name,
+        lastName
     }
 }

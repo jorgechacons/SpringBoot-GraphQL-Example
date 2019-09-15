@@ -14,28 +14,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
-
-//Must have a component to automatic instance
 @Component
 public class Query implements GraphQLQueryResolver {
-
-    Logger logger = LoggerFactory.getLogger(Query.class);
 
     @Autowired
     CustomerRepository customerRepository;
 
-    //Method to get all the customers from the customerRepository
-    //must have to match with the graphQL Schema
+
+    /**
+     * @return All customers
+     */
     public Iterable<Customer> findAllCustomers(){
-        logger.info("Responding all customers");
         return customerRepository.findAll();
     }
 
+
+    /**
+     * @param id
+     * @return Customer ( search by id )
+     */
     public Optional<Customer> findCustomer( Long id) {
-        logger.info("Responding customer by id search");
         return customerRepository.findById(id);
     }
 
+
+    /**
+     * @param id
+     * @return all customers that match with the ids
+     */
     public Iterable<Customer> findCustomerByIds(String id){
         return customerRepository.findCustomerByIdIn(Arrays.asList(id.split(",")).stream()
                 .map(Long::parseLong).collect(Collectors.toList()));

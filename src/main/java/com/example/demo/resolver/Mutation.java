@@ -14,11 +14,21 @@ public class Mutation implements GraphQLMutationResolver {
     @Autowired
     CustomerRepository customerRepository;
 
+    /**
+     * @param id
+     * @param name
+     * @param lastName
+     * @return Customer save into db
+     */
     public Customer addCustomer(Long id, String name, String lastName){
         return customerRepository.save(new Customer(id,name,lastName));
     }
 
 
+    /**
+     * @param id
+     * @return Customer Deleted message
+     */
     public String deleteCustomer(Long id){
         customerRepository.deleteById(id);
         return "Customer deleted";
