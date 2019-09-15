@@ -18,7 +18,7 @@ public class Mutation implements GraphQLMutationResolver {
      * @param id
      * @param name
      * @param lastName
-     * @return Customer save into db
+     * @return Customer saved into db
      */
     public Customer addCustomer(Long id, String name, String lastName){
         return customerRepository.save(new Customer(id,name,lastName));
