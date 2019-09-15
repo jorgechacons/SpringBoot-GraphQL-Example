@@ -13,6 +13,7 @@ type Query {
     findAllCustomers: [Customer]!
     findCustomer (id : Int) : Customer
     findCustomerByIds(ids : String!) : [Customer]
+    findCustomersNameStartsWith(startsWith : String!) : [Customer]
 }
 
 type Mutation {

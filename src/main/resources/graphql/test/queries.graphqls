@@ -20,3 +20,11 @@
         lastName
     }
 }
+
+{
+    findCustomersNameStartsWith(startsWith: "j"){
+        id,
+        name,
+        lastName
+    }
+}
