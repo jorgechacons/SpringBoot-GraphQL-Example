@@ -1,0 +1,10 @@
+mutation AddCustomer {
+    addCustomer(id :7, name: "Javier", lastName: "Cerrano"){
+        name,
+        id
+    }
+}
+
+mutation DeleteCustomer{
+    deleteCustomer(id: 7)
+}
