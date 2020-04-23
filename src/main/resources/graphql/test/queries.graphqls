@@ -1,30 +1,5 @@
 {
-    findAllCustomers{
-        id,
-        name,
-        lastName
-    }
-}
-
-{
-    findCustomer(id : 1){
-        id,
-        name,
-        lastName
-    }
-}
-
-{
-    findCustomerByIds(ids: "1,5"){
-        name,
-        lastName
-    }
-}
-
-{
-    findCustomersNameStartsWith(startsWith: "j"){
-        id,
-        name,
-        lastName
+    findUser{
+        id
     }
 }

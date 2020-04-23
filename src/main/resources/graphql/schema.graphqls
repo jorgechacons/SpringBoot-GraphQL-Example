@@ -1,25 +1,46 @@
 schema {
     query: Query
-    mutation: Mutation
+    # mutation: Mutation
 }
 
-type Customer {
+type User {
     id: ID!,
     name: String,
-    lastName: String
+    address: String,
+    posts : [Post],
+    followers : [Follower]
+}
+
+type Follower {
+    id: ID!,
+    user : User,
+    name: String,
+    address: String
+}
+
+type Post {
+    id: ID!,
+    user : User,
+    title: String,
+    content: String,
+    comments : [Comment]
+}
+
+type Comment {
+    id: ID!,
+    post: Post,
+    content: String
 }
 
 type Query {
-    findAllCustomers: [Customer]!
-    findCustomer (id : Int) : Customer
-    findCustomerByIds(ids : String!) : [Customer]
-    findCustomersNameStartsWith(startsWith : String!) : [Customer]
+    findUser (id : Int) : User,
+    findUsers: [User]
 }
 
-type Mutation {
-    addCustomer(id : Int!, name : String! , lastName : String!) : Customer!
-    deleteCustomer(id : Int!) : String!
-}
+#type Mutation {
+#    addUser(id : Int!, name : String! , address : String!) : User!
+#    deleteUser(id : Int!) : String!
+#}
 
 
 
