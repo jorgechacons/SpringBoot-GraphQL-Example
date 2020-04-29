@@ -30,7 +30,12 @@ public class Query implements GraphQLQueryResolver {
 
 
     public List<User> findUsers() {
-        return userRepository.findAll();
+        List<User> users = userRepository.findAll();
+        users.forEach(u ->  {
+            u.setPosts(postRepository.findByUserId(u.getId()));
+            u.setFollowers(followerRepository.findByUserId(u.getId()));
+        });
+        return users;
     }
 
     public User findUser(Long id) {
@@ -40,6 +45,7 @@ public class Query implements GraphQLQueryResolver {
 
         return user;
     }
+
 
 
 }

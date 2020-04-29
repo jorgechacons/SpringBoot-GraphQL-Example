@@ -4,14 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 //Entity to map data base table
@@ -36,6 +29,6 @@ public class Post {
     @Column(name = "TITLE")
     private String title;
 
-    @OneToMany(mappedBy="post", fetch= FetchType.EAGER)
+    @OneToMany(mappedBy="post", fetch= FetchType.EAGER,cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments;
 }

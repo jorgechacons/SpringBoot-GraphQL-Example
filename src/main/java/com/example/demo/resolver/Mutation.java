@@ -9,26 +9,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Mutation implements GraphQLMutationResolver {
 
-   /* @Autowired
+    @Autowired
     UserRepository userRepository;
 
-    *//**
-     * @param id
-     * @param name
-     * @param lastName
-     * @return User saved into db
-     *//*
-    public User findUser(Long id, String name, String lastName){
-        return customerRepository.save(new User(id,name,lastName));
-    }
-
-
-    *//**
-     * @param id
-     * @return User Deleted message
-     *//*
-    public String deleteCustomer(Long id){
-        customerRepository.deleteById(id);
+    public String deleteUser(Long id) {
+        userRepository.deleteById(id);
         return "User deleted";
-    }*/
+    }
 }

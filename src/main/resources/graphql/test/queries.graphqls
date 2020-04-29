@@ -1,5 +1,30 @@
 {
-    findUser{
-        id
+    findUser(id:2){
+        id,
+        name,
+        address,
+        posts{
+            id,
+            user{
+                name
+            }
+        }
+    }
+}
+
+{
+    findUsers{
+        id,
+        name,
+        address,
+        posts{
+            comments{
+                content
+            }
+        },
+        followers{
+            id,
+            name
+        }
     }
 }

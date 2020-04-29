@@ -6,5 +6,5 @@ mutation AddCustomer {
 }
 
 mutation DeleteCustomer{
-    deleteCustomer(id: 7)
+    deleteUser(id: 1)
 }

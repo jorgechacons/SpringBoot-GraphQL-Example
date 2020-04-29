@@ -4,13 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 //Entity to map data base table
@@ -31,9 +25,9 @@ public class User {
     @Column(name = "ADDRESS")
     private String address;
 
-    @OneToMany(mappedBy="user")
+    @OneToMany(mappedBy="user",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Follower> followers;
 
-    @OneToMany(mappedBy="user")
+    @OneToMany(mappedBy="user",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Post> posts;
 }

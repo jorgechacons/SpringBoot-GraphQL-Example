@@ -1,6 +1,6 @@
 schema {
     query: Query
-    # mutation: Mutation
+    mutation: Mutation
 }
 
 type User {
@@ -37,10 +37,10 @@ type Query {
     findUsers: [User]
 }
 
-#type Mutation {
-#    addUser(id : Int!, name : String! , address : String!) : User!
-#    deleteUser(id : Int!) : String!
-#}
+type Mutation {
+    #addUser(id : Int!, name : String! , address : String!) : User!
+    deleteUser(id : Int!) : String!
+}
 
 
 
