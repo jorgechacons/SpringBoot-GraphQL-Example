@@ -38,9 +38,26 @@ type Query {
 }
 
 type Mutation {
-    #addUser(id : Int!, name : String! , address : String!) : User!
+    addComment(commentInput : CommentInput) : Comment!
+    addUser(userInput : UserInput!) : User!
     deleteUser(id : Int!) : String!
 }
+
+
+input UserInput {
+    id: ID!,
+    name: String,
+    address: String
+}
+
+input CommentInput {
+    id : ID!,
+    postId : Int!,
+    content : String
+}
+
+
+
 
 
 

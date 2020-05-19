@@ -18,7 +18,10 @@
         name,
         address,
         posts{
+            id,
+            title
             comments{
+                id,
                 content
             }
         },
