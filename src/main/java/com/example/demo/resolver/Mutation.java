@@ -48,3 +48,4 @@ public class Mutation implements GraphQLMutationResolver {
         return commentRepository.save(comment);
     }
 }
+
